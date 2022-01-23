@@ -1,0 +1,69 @@
+### create dormitory
+POST http://localhost:8080/dormitories
+Content-Type: application/json
+
+{
+  "name": "Общежитие №1",
+  "address": "Екатеринбург, Большакова, 70"
+}
+
+#### Get list
+GET http://localhost:8080/dormitories
+
+### Update dormitory
+
+PUT http://localhost:8080/dormitories/1
+Content-Type: application/json
+
+{
+  "name": "Общежитие №1",
+  "address": "Екатеринбург, Большакова, 76"
+}
+
+### GET by id
+GET http://localhost:8080/dormitories/1
+
+
+
+### create room
+POST http://localhost:8080/rooms
+Content-Type: application/json
+
+{
+  "title": "101",
+  "dormitoryId": 1,
+  "isBusy": false,
+  "needRepair": false,
+  "numberOfSeats": 2
+}
+
+
+### update room
+PUT http://localhost:8080/rooms/1
+Content-Type: application/json
+
+{
+  "title": "101a",
+  "dormitoryId": 1,
+  "isBusy": false,
+  "needRepair": false,
+  "numberOfSeats": 2,
+  "freeSeat": 2
+}
+
+### get all rooms
+GET http://localhost:8080/rooms
+
+
+### create resident
+POST http://localhost:8080/residents
+Content-Type: application/json
+
+{
+  "firstName": "Ivan",
+  "lastName": "Korchagin",
+  "roomId": 1
+}
+
+### delete resident
+DELETE http://localhost:8080/residents/1
